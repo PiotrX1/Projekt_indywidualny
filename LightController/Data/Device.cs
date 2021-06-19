@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Identity;
@@ -12,11 +13,15 @@ namespace LightController.Data
         [DataType("varchar(100")] 
         public string Name { get; set; }
         
-        public IdentityUser Owner { get; set; }
+        public ApplicationUser Owner { get; set; }
         
         public Status Status { get; set; }
         
+        public int StatusId { get; set; }
+        
         public bool Registered { get; set; }
+        
+        public string RegisterNumber { get; set; }
         
     }
 }

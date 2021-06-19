@@ -8,6 +8,7 @@ namespace LightController.Data
     public class ApplicationUser : IdentityUser<int>
     {
         public List<Device> Devices { get; set; }
+        public string ActivationToken { get; set; }
         
     }
 }

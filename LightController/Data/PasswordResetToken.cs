@@ -6,6 +6,7 @@ namespace LightController.Data
     {
         public int Id { get; set; }
         public ApplicationUser User { get; set; }
+        public string Token { get; set; }
         public DateTime ExpirationTime { get; set; }
         public bool Used { get; set; }
     }

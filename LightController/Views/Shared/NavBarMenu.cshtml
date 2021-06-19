@@ -1,0 +1,31 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Microsoft.AspNetCore.Authorization
+@using LightController.Data
+
+@inject SignInManager<ApplicationUser> _signInManager
+@inject UserManager<ApplicationUser> _userManager
+@inject IAuthorizationService _authorizationService
+
+
+
+<ul class="navbar-nav">
+    
+    @if (_signInManager.IsSignedIn((User)))
+    {
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Devices" asp-action="Index">Urządzenia</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Account" asp-action="Logout">Wyloguj</a>
+        </li>
+    }
+    else
+    {
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Account" asp-action="Login">Logowanie</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" asp-controller="Account" asp-action="Register">Rejestracja</a>
+        </li>
+    }
+</ul>

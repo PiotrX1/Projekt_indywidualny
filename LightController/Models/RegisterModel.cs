@@ -14,5 +14,9 @@ namespace LightController.Models
         public string Password { get; set; }
         [Compare("Password", ErrorMessage = "Hasła nie są identyczne")]
         public string Password2 { get; set; }
+        
+        
+        public string Info { get; set; }
+        
     }
 }

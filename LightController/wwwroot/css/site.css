@@ -1,0 +1,22 @@
+﻿footer {
+  background: #333;
+  height: 200px;
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  line-height: 200px;
+}
+.card {
+  margin: 10px;
+}
+
+.validation-summary-errors ul {
+  margin: 0;
+}
+
+img.form-image {
+  max-height: 500px;
+}
+body {
+  padding-top: 50px;
+}

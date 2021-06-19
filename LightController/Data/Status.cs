@@ -12,5 +12,6 @@ namespace LightController.Data
         
         [DataType("varchar(100)")]
         public string Description { get; set; }
+
     }
 }

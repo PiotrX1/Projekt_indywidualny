@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Twoje urządzenia";
+    Layout = "_Layout";
+}
+@model List<DeviceListModel>
+
+<h1 class="display-6">@ViewBag.Title</h1>
+
+<div class="row">
+    <table class="table table-striped text-center">
+        <thead>
+        <tr>
+            <th scope="col" class="col-md-2">#</th>
+            <th scope="col" class="col-md-3">Nazwa</th>
+            <th scope="col" class="col-md-3">Status</th>
+            <th scope="col" class="col-md-4">Zarządzanie</th>
+        </tr>
+        </thead>
+        <tbody>
+        @{
+            for (var i = 0; i < Model.Count; i++)
+            {
+                
+                <tr class="align-middle"> 
+                    <td class="col-md-2">@(i+1)</td>
+                    <td class="col-md-3">@Model[@i].Name</td>
+                    <td class="col-md-3">
+                        @if (@Model[@i].Status == "Włączony")
+                        {
+                            <span class="badge bg-primary">@Model[@i].Status</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-dark">@Model[@i].Status</span>
+                        }
+                        
+                        
+                        
+                    </td>
+                    <td class="col-md-4">
+                        <a asp-action="Enable" asp-route-id="@Model[@i].Id" class="btn btn-outline-success">Włącz</a>
+                        <a asp-action="Disable" asp-route-id="@Model[@i].Id" class="btn btn-outline-danger">Wyłącz</a>
+                        <a asp-action="Info" asp-route-id="@Model[@i].Id" class="btn btn-outline-secondary">Więcej</a>
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>
